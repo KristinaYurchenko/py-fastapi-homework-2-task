@@ -8,8 +8,8 @@ from sqlalchemy.orm import selectinload, joinedload
 
 from database import get_db, MovieModel, models
 from database.models import GenreModel, ActorModel, LanguageModel, CountryModel
-from schemas import MovieListResponseSchema, MovieDetailSchema, MovieCreateSchema
-from schemas.movies import MovieUpdateSchema
+from schemas import MovieListResponseSchema, MovieDetailSchema
+from schemas.movies import MovieUpdateSchema, MovieCreateSchema
 
 router = APIRouter()
 
