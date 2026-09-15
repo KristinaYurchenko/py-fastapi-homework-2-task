@@ -84,6 +84,7 @@ class MovieCreateSchema(BaseModel):
             raise ValueError("The date must not be more than one year in the future.")
         return value
 
+
 class MovieUpdateSchema(BaseModel):
     name: str | None = Field(default=None, max_length=255)
     date: datetime.date | None = None
