@@ -140,9 +140,6 @@ async def update_movie(movie_id: int, movie_data: MovieUpdateSchema, db: AsyncSe
         raise HTTPException(status_code=404, detail="Movie with the given ID was not found.")
 
     values = movie_data.model_dump(exclude_unset=True)
-    if not values:
-        return db_movie
-
     await db.execute(update(models.MovieModel).where(models.MovieModel.id == movie_id).values(**values))
     try:
         await db.commit()
